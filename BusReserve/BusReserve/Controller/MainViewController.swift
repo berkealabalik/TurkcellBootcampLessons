@@ -93,6 +93,7 @@ class MainViewController: UIViewController {
         for y in busTrips {
             filterData(x: y)
         }
+       
         busTicketsTable.reloadData()
         busTicketsTable.isHidden = false
        
@@ -128,7 +129,7 @@ extension MainViewController : UITableViewDelegate , UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ReserveBusViewController {
-            destination.selectedBus = busTrips[(busTicketsTable.indexPathForSelectedRow?.row)!]
+            destination.selectedBus = filteredTrips[(busTicketsTable.indexPathForSelectedRow?.row)!]
             
         }
     }

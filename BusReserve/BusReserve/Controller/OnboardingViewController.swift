@@ -56,7 +56,7 @@ extension OnboardingViewController {
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.font = UIFont.preferredFont(forTextStyle: .subheadline, compatibleWith: .current)
         subtitleLabel.textAlignment = .left
-        subtitleLabel.textColor = .lightGray
+        subtitleLabel.textColor = .white
         
         
         subtitleLabel.numberOfLines = 0

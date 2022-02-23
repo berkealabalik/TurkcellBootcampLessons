@@ -45,7 +45,7 @@ extension DemoViewController {
         let page1 = OnboardingViewController(imageName: "arkatema",
                                              titleText: "BusReserve Hoşgeldiniz",
                                              subtitleText: "Otobüs Bileti Almada Yeni Dönem . En İyi Fiyata En Kaliteli Hizmet GARANTİSİ İle.")
-        let page2 = OnboardingViewController(imageName: "" ?? "nil",
+        let page2 = OnboardingViewController(imageName: "" ,
                                              titleText: "Biletini Kolayca Reserve Et",
                                              subtitleText: "BusReserve Ayrıcalıklı dünyası İle Yeni Yollar , Yeni Maceralara Açıl")
     
