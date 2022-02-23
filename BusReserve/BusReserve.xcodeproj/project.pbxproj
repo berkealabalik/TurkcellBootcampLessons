@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB3CE39927B914E9002DF012 /* BusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3CE39727B914E9002DF012 /* BusTableViewCell.swift */; };
+		CB3CE39A27B914E9002DF012 /* BusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3CE39827B914E9002DF012 /* BusTableViewCell.xib */; };
+		CB3CE39C27B919FC002DF012 /* BusClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3CE39B27B919FC002DF012 /* BusClass.swift */; };
+		CB4A851827B072B6007AC85C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4A851727B072B6007AC85C /* Main.storyboard */; };
+		CB4A851A27B072F0007AC85C /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A851927B072F0007AC85C /* DemoViewController.swift */; };
+		CB4A851D27B0731B007AC85C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A851C27B0731B007AC85C /* OnboardingViewController.swift */; };
+		CB6DD9DD27BB0A61004E8F7D /* ReserveBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DD9DC27BB0A61004E8F7D /* ReserveBusViewController.swift */; };
+		CB88161027B125C600D27CE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88160F27B125C600D27CE6 /* MainViewController.swift */; };
+		CB9040F127B68EE700DB1DAE /* PopUpCityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9040F027B68EE700DB1DAE /* PopUpCityTableViewController.swift */; };
+		CB9784DA27AFE828003DA756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9784D927AFE828003DA756 /* AppDelegate.swift */; };
+		CB9784DC27AFE828003DA756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9784DB27AFE828003DA756 /* SceneDelegate.swift */; };
+		CB9784E427AFE828003DA756 /* BusReserve.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB9784E227AFE828003DA756 /* BusReserve.xcdatamodeld */; };
+		CB9784E627AFE82A003DA756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9784E527AFE82A003DA756 /* Assets.xcassets */; };
+		CB9784E927AFE82A003DA756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9784E727AFE82A003DA756 /* LaunchScreen.storyboard */; };
+		CB9819C127B866130017D583 /* rounder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9819C027B866130017D583 /* rounder.swift */; };
+		CB9819C427B869D80017D583 /* TicketClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9819C327B869D80017D583 /* TicketClass.swift */; };
+		CB9819C627B869ED0017D583 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9819C527B869ED0017D583 /* Passenger.swift */; };
+		CB9819C827B869FE0017D583 /* DateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9819C727B869FE0017D583 /* DateClass.swift */; };
+		CB9819CA27B86A1D0017D583 /* HourClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9819C927B86A1D0017D583 /* HourClass.swift */; };
+		CB9E51EB27C6AFE1001B896A /* emptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9E51EA27C6AFE1001B896A /* emptyCollectionViewCell.swift */; };
+		CBA9E0B427C2751400A11987 /* TicketInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9E0B327C2751400A11987 /* TicketInfoViewController.swift */; };
+		CBF6A52F27BBDBB300B57396 /* busPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF6A52D27BBDBB300B57396 /* busPlaceCollectionViewCell.swift */; };
+		CBF6A53027BBDBB300B57396 /* busPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF6A52E27BBDBB300B57396 /* busPlaceCollectionViewCell.xib */; };
+		CBF8849F27BD765700172714 /* OdemePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF8849E27BD765700172714 /* OdemePageViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CB3CE39727B914E9002DF012 /* BusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTableViewCell.swift; sourceTree = "<group>"; };
+		CB3CE39827B914E9002DF012 /* BusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusTableViewCell.xib; sourceTree = "<group>"; };
+		CB3CE39B27B919FC002DF012 /* BusClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusClass.swift; sourceTree = "<group>"; };
+		CB4A851727B072B6007AC85C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CB4A851927B072F0007AC85C /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		CB4A851C27B0731B007AC85C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		CB6DD9DC27BB0A61004E8F7D /* ReserveBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveBusViewController.swift; sourceTree = "<group>"; };
+		CB88160F27B125C600D27CE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CB9040F027B68EE700DB1DAE /* PopUpCityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCityTableViewController.swift; sourceTree = "<group>"; };
+		CB9784D627AFE828003DA756 /* BusReserve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusReserve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9784D927AFE828003DA756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB9784DB27AFE828003DA756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CB9784E327AFE828003DA756 /* BusReserve.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusReserve.xcdatamodel; sourceTree = "<group>"; };
+		CB9784E527AFE82A003DA756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB9784E827AFE82A003DA756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB9784EA27AFE82A003DA756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB9819C027B866130017D583 /* rounder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rounder.swift; sourceTree = "<group>"; };
+		CB9819C327B869D80017D583 /* TicketClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketClass.swift; sourceTree = "<group>"; };
+		CB9819C527B869ED0017D583 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		CB9819C727B869FE0017D583 /* DateClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateClass.swift; sourceTree = "<group>"; };
+		CB9819C927B86A1D0017D583 /* HourClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourClass.swift; sourceTree = "<group>"; };
+		CB9E51EA27C6AFE1001B896A /* emptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBA9E0B327C2751400A11987 /* TicketInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoViewController.swift; sourceTree = "<group>"; };
+		CBF6A52D27BBDBB300B57396 /* busPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBF6A52E27BBDBB300B57396 /* busPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = busPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
+		CBF8849E27BD765700172714 /* OdemePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemePageViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB9784D327AFE828003DA756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB3CE39627B914C8002DF012 /* CellDesign */ = {
+			isa = PBXGroup;
+			children = (
+				CB3CE39727B914E9002DF012 /* BusTableViewCell.swift */,
+				CB3CE39827B914E9002DF012 /* BusTableViewCell.xib */,
+				CBF6A52D27BBDBB300B57396 /* busPlaceCollectionViewCell.swift */,
+				CBF6A52E27BBDBB300B57396 /* busPlaceCollectionViewCell.xib */,
+				CB9E51EA27C6AFE1001B896A /* emptyCollectionViewCell.swift */,
+			);
+			path = CellDesign;
+			sourceTree = "<group>";
+		};
+		CB4A851227AFED77007AC85C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB4A851927B072F0007AC85C /* DemoViewController.swift */,
+				CB4A851C27B0731B007AC85C /* OnboardingViewController.swift */,
+				CB88160F27B125C600D27CE6 /* MainViewController.swift */,
+				CB9040F027B68EE700DB1DAE /* PopUpCityTableViewController.swift */,
+				CB6DD9DC27BB0A61004E8F7D /* ReserveBusViewController.swift */,
+				CBF8849E27BD765700172714 /* OdemePageViewController.swift */,
+				CBA9E0B327C2751400A11987 /* TicketInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CB88161127B12DEC00D27CE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB9819C327B869D80017D583 /* TicketClass.swift */,
+				CB9819C527B869ED0017D583 /* Passenger.swift */,
+				CB9819C727B869FE0017D583 /* DateClass.swift */,
+				CB9819C927B86A1D0017D583 /* HourClass.swift */,
+				CB3CE39B27B919FC002DF012 /* BusClass.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB9784CD27AFE828003DA756 = {
+			isa = PBXGroup;
+			children = (
+				CB9784D827AFE828003DA756 /* BusReserve */,
+				CB9784D727AFE828003DA756 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB9784D727AFE828003DA756 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB9784D627AFE828003DA756 /* BusReserve.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB9784D827AFE828003DA756 /* BusReserve */ = {
+			isa = PBXGroup;
+			children = (
+				CB3CE39627B914C8002DF012 /* CellDesign */,
+				CB9819BD27B859AA0017D583 /* Extension */,
+				CB88161127B12DEC00D27CE6 /* Model */,
+				CB4A851227AFED77007AC85C /* Controller */,
+				CB9784D927AFE828003DA756 /* AppDelegate.swift */,
+				CB9784DB27AFE828003DA756 /* SceneDelegate.swift */,
+				CB9784E527AFE82A003DA756 /* Assets.xcassets */,
+				CB9784E727AFE82A003DA756 /* LaunchScreen.storyboard */,
+				CB9784EA27AFE82A003DA756 /* Info.plist */,
+				CB9784E227AFE828003DA756 /* BusReserve.xcdatamodeld */,
+				CB4A851727B072B6007AC85C /* Main.storyboard */,
+			);
+			path = BusReserve;
+			sourceTree = "<group>";
+		};
+		CB9819BD27B859AA0017D583 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB9819C027B866130017D583 /* rounder.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB9784D527AFE828003DA756 /* BusReserve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB9784ED27AFE82A003DA756 /* Build configuration list for PBXNativeTarget "BusReserve" */;
+			buildPhases = (
+				CB9784D227AFE828003DA756 /* Sources */,
+				CB9784D327AFE828003DA756 /* Frameworks */,
+				CB9784D427AFE828003DA756 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BusReserve;
+			productName = BusReserve;
+			productReference = CB9784D627AFE828003DA756 /* BusReserve.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB9784CE27AFE828003DA756 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					CB9784D527AFE828003DA756 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = CB9784D127AFE828003DA756 /* Build configuration list for PBXProject "BusReserve" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB9784CD27AFE828003DA756;
+			productRefGroup = CB9784D727AFE828003DA756 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB9784D527AFE828003DA756 /* BusReserve */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB9784D427AFE828003DA756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4A851827B072B6007AC85C /* Main.storyboard in Resources */,
+				CBF6A53027BBDBB300B57396 /* busPlaceCollectionViewCell.xib in Resources */,
+				CB9784E927AFE82A003DA756 /* LaunchScreen.storyboard in Resources */,
+				CB3CE39A27B914E9002DF012 /* BusTableViewCell.xib in Resources */,
+				CB9784E627AFE82A003DA756 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB9784D227AFE828003DA756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9819C127B866130017D583 /* rounder.swift in Sources */,
+				CB9784E427AFE828003DA756 /* BusReserve.xcdatamodeld in Sources */,
+				CBF6A52F27BBDBB300B57396 /* busPlaceCollectionViewCell.swift in Sources */,
+				CB9784DA27AFE828003DA756 /* AppDelegate.swift in Sources */,
+				CBA9E0B427C2751400A11987 /* TicketInfoViewController.swift in Sources */,
+				CB9819C627B869ED0017D583 /* Passenger.swift in Sources */,
+				CB4A851D27B0731B007AC85C /* OnboardingViewController.swift in Sources */,
+				CBF8849F27BD765700172714 /* OdemePageViewController.swift in Sources */,
+				CB9819C827B869FE0017D583 /* DateClass.swift in Sources */,
+				CB9040F127B68EE700DB1DAE /* PopUpCityTableViewController.swift in Sources */,
+				CB9819CA27B86A1D0017D583 /* HourClass.swift in Sources */,
+				CB88161027B125C600D27CE6 /* MainViewController.swift in Sources */,
+				CB9784DC27AFE828003DA756 /* SceneDelegate.swift in Sources */,
+				CB6DD9DD27BB0A61004E8F7D /* ReserveBusViewController.swift in Sources */,
+				CB3CE39927B914E9002DF012 /* BusTableViewCell.swift in Sources */,
+				CB3CE39C27B919FC002DF012 /* BusClass.swift in Sources */,
+				CB9819C427B869D80017D583 /* TicketClass.swift in Sources */,
+				CB4A851A27B072F0007AC85C /* DemoViewController.swift in Sources */,
+				CB9E51EB27C6AFE1001B896A /* emptyCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CB9784E727AFE82A003DA756 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB9784E827AFE82A003DA756 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB9784EB27AFE82A003DA756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB9784EC27AFE82A003DA756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB9784EE27AFE82A003DA756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BVC2A96553;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusReserve/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BusTicket.BusReserve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB9784EF27AFE82A003DA756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BVC2A96553;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusReserve/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BusTicket.BusReserve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB9784D127AFE828003DA756 /* Build configuration list for PBXProject "BusReserve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9784EB27AFE82A003DA756 /* Debug */,
+				CB9784EC27AFE82A003DA756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB9784ED27AFE82A003DA756 /* Build configuration list for PBXNativeTarget "BusReserve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9784EE27AFE82A003DA756 /* Debug */,
+				CB9784EF27AFE82A003DA756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB9784E227AFE828003DA756 /* BusReserve.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB9784E327AFE828003DA756 /* BusReserve.xcdatamodel */,
+			);
+			currentVersion = CB9784E327AFE828003DA756 /* BusReserve.xcdatamodel */;
+			path = BusReserve.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CB9784CE27AFE828003DA756 /* Project object */;
+}
