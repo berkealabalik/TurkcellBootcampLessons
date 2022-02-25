@@ -24,3 +24,8 @@
 
  </p>
 
+! Seçilen Koltuklar : 44 45 15 9 4 
+
+Satın alım sonrası Koltuk Durumu :
+<img width="359" alt="Ekran Resmi 2022-02-25 12 09 58" src="https://user-images.githubusercontent.com/97310060/155687735-0c564903-c485-4fd0-ab8d-2eb0c9fa6a37.png">
+
