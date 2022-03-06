@@ -32,45 +32,10 @@
                     <view key="view" contentMode="scaleToFill" id="SdN-3D-g8t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LIO-M8-Qbw">
-                                <rect key="frame" x="0.0" y="84" width="414" height="729"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZeG-e2-2nz">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="GamesCell" id="Ytv-vq-gV3">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fjv-cd-3Z8">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="zH7-N5-gC8" id="lC0-l1-gQd"/>
-                                    <outlet property="delegate" destination="zH7-N5-gC8" id="WWc-by-HYb"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="IU8-n7-yj1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="IU8-n7-yj1" firstAttribute="trailing" secondItem="LIO-M8-Qbw" secondAttribute="trailing" id="273-Lx-3q3"/>
-                            <constraint firstItem="LIO-M8-Qbw" firstAttribute="top" secondItem="IU8-n7-yj1" secondAttribute="top" constant="40" id="M9O-GI-X0H"/>
-                            <constraint firstItem="IU8-n7-yj1" firstAttribute="bottom" secondItem="LIO-M8-Qbw" secondAttribute="bottom" id="UHa-5O-dZL"/>
-                            <constraint firstItem="LIO-M8-Qbw" firstAttribute="leading" secondItem="IU8-n7-yj1" secondAttribute="leading" id="tVA-BZ-KNf"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="0gp-gc-CpG"/>
-                    <connections>
-                        <outlet property="collectionView" destination="LIO-M8-Qbw" id="wLb-Ep-F6v"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYx-me-LD8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +44,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="sul-cg-QAe">
             <objects>
-                <tabBarController id="Kue-O3-UD6" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UITabbarCont" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kue-O3-UD6" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZAy-gj-4bf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -123,7 +88,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingcellId" id="AiI-0T-x2c" customClass="OnboardingCollectionViewCell" customModule="onboardingTemplate_Lottie" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingcellId" id="AiI-0T-x2c" customClass="OnboardingCollectionViewCell" customModule="GameScore" customModuleProvider="target">
                                         <rect key="frame" x="17" y="0.0" width="380" height="800"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="frV-Qh-sRg">

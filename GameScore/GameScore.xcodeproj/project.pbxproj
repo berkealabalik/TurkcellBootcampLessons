@@ -19,6 +19,7 @@
 		CB39631C27D3924D00F1963F /* GameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39631B27D3924D00F1963F /* GameRequest.swift */; };
 		CB39631F27D39C0300F1963F /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39631E27D39C0300F1963F /* Games.swift */; };
 		CB39632127D39F7A00F1963F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39632027D39F7A00F1963F /* MainViewController.swift */; };
+		CBAC712927D4E189005D4217 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC712827D4E189005D4217 /* HeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CB39631B27D3924D00F1963F /* GameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRequest.swift; sourceTree = "<group>"; };
 		CB39631E27D39C0300F1963F /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		CB39632027D39F7A00F1963F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CBAC712827D4E189005D4217 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				CB13567327D4BDCC002D45A1 /* GamesCollectionViewCell.swift */,
 				CB13567427D4BDCC002D45A1 /* GamesCollectionViewCell.xib */,
+				CBAC712827D4E189005D4217 /* HeaderCollectionReusableView.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB39631C27D3924D00F1963F /* GameRequest.swift in Sources */,
+				CBAC712927D4E189005D4217 /* HeaderCollectionReusableView.swift in Sources */,
 				CB13567127D4B738002D45A1 /* CornerRadius.swift in Sources */,
 				CB13566D27D4B281002D45A1 /* OnboardingViewController.swift in Sources */,
 				CB39630427D390A400F1963F /* AppDelegate.swift in Sources */,

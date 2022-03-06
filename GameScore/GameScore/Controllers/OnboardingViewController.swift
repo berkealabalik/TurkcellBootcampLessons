@@ -87,7 +87,7 @@ class OnboardingViewController: UIViewController {
     }
     
     private func showMain() {
-        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") // Controller Routed
+        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UITabbarCont") // Controller Routed
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
             let sceneDelegate = windowScene.delegate as? SceneDelegate,
             let window = sceneDelegate.window {
