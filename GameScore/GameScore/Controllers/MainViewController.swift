@@ -10,34 +10,35 @@ import UIKit
 var GameInformation : [GamesData] = []
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
    
-    
+   
     var collectionView: UICollectionView?
-    
-
+    var searchBar : UISearchBar?
     override func viewDidLoad() {
         
         super.viewDidLoad()
         GameInformation = AllGames[0].results
         configureCollectionView()
+
         
 }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         collectionView?.frame = view.bounds
     }
     
     private func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 80, left: 20, bottom: 40, right: 20)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.width/3)
         collectionView = UICollectionView(frame : .zero, collectionViewLayout: layout)
         collectionView?.register(UINib(nibName: "GamesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GamesCollectionViewCell")
-        collectionView?.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
-        
+        collectionView?.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
+      
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = .clear
         view.addSubview(collectionView!)
       
     }
@@ -50,18 +51,33 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GamesCollectionViewCell", for: indexPath) as! GamesCollectionViewCell
+        cell.nameGame.text = GameInformation[indexPath.row + 3].name
+        cell.ratingReleasedLAbel.text = "Rating : "+String(GameInformation[indexPath.row + 3].metacritic)+"\nRelase Date : "+GameInformation[indexPath.row + 3].released
+        
+        UIImage.loadFrom(url: URL(string : GameInformation[indexPath.row + 3].backgroundImage)!) { image in
+            cell.gameImage.image = image
+        }
+        
+        
         return cell
     }
     
+  
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
-        header.configureHeader()
-        header.AllCorners = 10
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
+        UIImage.loadFrom(url: URL(string : GameInformation[indexPath.row].backgroundImage)!) { image in
+            header.headerImage.image = image
+        }
+        
+        header.gameNameHeader.text = GameInformation[indexPath.row].name
         return header
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width/1.8, height: 200)
+        return CGSize(width: view.frame.size.width, height: 400)
     }
     
 

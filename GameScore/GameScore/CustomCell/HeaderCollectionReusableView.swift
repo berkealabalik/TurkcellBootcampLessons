@@ -7,29 +7,26 @@
 
 import UIKit
 
-class HeaderCollectionReusableView: UICollectionReusableView {
-    static let identifier = "HeaderCollectionReusableView"
-    let Headerlayout = UICollectionViewFlowLayout()
+class HeaderCollectionReusableView: UICollectionReusableView , UICollectionViewDelegateFlowLayout {
     
-    private let label : UILabel = {
-        let label = UILabel()
-        label.text = "Header Section"
-        label.textAlignment = .left
-        label.textColor = .white
-        return label
-    }()
+    let layout = UICollectionViewFlowLayout()
     
-    public func configureHeader(){
-        backgroundColor = .systemGreen
-        addSubview(label)
-        Headerlayout.scrollDirection = .horizontal
+
+    @IBOutlet weak var gameNameHeader: UILabel!
+    @IBOutlet weak var outerView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var headerImage: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layout.scrollDirection = .vertical
+        
+        
+        outerView.backgroundColor = .purple
+        
+        headerImage.AllCorners = 20
+        
         
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        label.frame = bounds
-        
-    }
-        
 }
