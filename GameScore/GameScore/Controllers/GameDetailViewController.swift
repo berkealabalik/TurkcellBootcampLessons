@@ -39,7 +39,7 @@ class GameDetailViewController: UIViewController {
             configureData()
         }
         
-        gameNameLAbel.text = selectedGame[0].name
+        gameNameLAbel.text = " " + selectedGame[0].name
         metacriticLabel.text = metacriticLabel.text! + " " + String(selectedGame[0].metacritic)
         relaseDateLabel.text = relaseDateLabel.text! + " " + selectedGame[0].released
         descriptionLabel.text = "   " + selectedGame[0].updated

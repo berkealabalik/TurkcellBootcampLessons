@@ -20,7 +20,7 @@ class HeaderCollectionReusableView: UICollectionReusableView , UICollectionViewD
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        outerView.backgroundColor = .purple
+        outerView.backgroundColor = .darkGray
         
         headerImage.AllCorners = 20
         

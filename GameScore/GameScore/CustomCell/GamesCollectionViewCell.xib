@@ -21,12 +21,12 @@
                         <rect key="frame" x="10" y="10" width="409" height="152"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DYW-X8-Qhf">
-                                <rect key="frame" x="10" y="10" width="389" height="132"/>
+                                <rect key="frame" x="0.0" y="0.0" width="409" height="152"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bcV-8Q-yPL">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="132"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcV-8Q-yPL">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="152"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="ZH0-aX-ExJ"/>
+                                            <constraint firstAttribute="width" constant="200" id="cej-Nu-RBu"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="AllCorners">
@@ -34,23 +34,23 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ysv-Ji-BYO">
-                                        <rect key="frame" x="135" y="0.0" width="254" height="132"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ysv-Ji-BYO">
+                                        <rect key="frame" x="215" y="0.0" width="194" height="152"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name Of Game" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw6-qn-hZy">
-                                                <rect key="frame" x="0.0" y="0.0" width="254" height="109.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="194" height="129.5"/>
                                                 <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating - Released" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDO-2J-fBj">
-                                                <rect key="frame" x="0.0" y="109.5" width="254" height="14"/>
+                                                <rect key="frame" x="0.0" y="129.5" width="194" height="14"/>
                                                 <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gx-ne-psw">
-                                                <rect key="frame" x="0.0" y="123.5" width="254" height="8.5"/>
+                                                <rect key="frame" x="0.0" y="143.5" width="194" height="8.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="7"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -62,10 +62,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DYW-X8-Qhf" firstAttribute="top" secondItem="EtZ-b0-1Xa" secondAttribute="top" constant="10" id="Jqv-BI-Evy"/>
-                            <constraint firstAttribute="trailing" secondItem="DYW-X8-Qhf" secondAttribute="trailing" constant="10" id="Uuc-8U-Ka9"/>
-                            <constraint firstItem="DYW-X8-Qhf" firstAttribute="leading" secondItem="EtZ-b0-1Xa" secondAttribute="leading" constant="10" id="ZUZ-Wj-F8I"/>
-                            <constraint firstAttribute="bottom" secondItem="DYW-X8-Qhf" secondAttribute="bottom" constant="10" id="lNG-Uy-e8D"/>
+                            <constraint firstItem="DYW-X8-Qhf" firstAttribute="top" secondItem="EtZ-b0-1Xa" secondAttribute="top" id="2TR-d5-dNk"/>
+                            <constraint firstAttribute="bottom" secondItem="DYW-X8-Qhf" secondAttribute="bottom" id="9Fy-M0-XcQ"/>
+                            <constraint firstItem="DYW-X8-Qhf" firstAttribute="leading" secondItem="EtZ-b0-1Xa" secondAttribute="leading" id="9Sn-Ce-LNA"/>
+                            <constraint firstAttribute="trailing" secondItem="DYW-X8-Qhf" secondAttribute="trailing" id="nV5-Ud-D1G"/>
                         </constraints>
                     </view>
                 </subviews>

@@ -19,7 +19,7 @@ class GamesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         outerView.AllCorners = 10
-        backgroundColor = .purple
+        backgroundColor = .darkGray
         
     }
 

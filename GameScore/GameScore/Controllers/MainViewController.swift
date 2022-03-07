@@ -21,10 +21,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         GameInformation = AllGames[0].results
         GameDescription = AllGames[0].gamesInfoDescription
-        print("Gamedes \(GameDescription)")
         configureCollectionView()
 
-        
 }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -38,11 +36,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.width/3)
+        layout.minimumLineSpacing = 0
         collectionViewHeader = UICollectionView(frame : .zero, collectionViewLayout: layout)
         collectionView = UICollectionView(frame : .zero, collectionViewLayout: layout)
         collectionView?.register(UINib(nibName: "GamesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GamesCollectionViewCell")
         collectionView?.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
       
+        
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.backgroundColor = .clear
@@ -75,6 +75,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
         UIImage.loadFrom(url: URL(string : GameInformation[indexPath.row].backgroundImage)!) { image in
             header.headerImage.image = image
+            
         }
         
         header.gameNameHeader.text = GameInformation[indexPath.row].name
@@ -89,7 +90,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let destination = segue.destination as? GameDetailViewController {
                 var index = self.collectionView?.indexPathsForSelectedItems?.first?.endIndex
-                index = Int(index!) + 3
+                index = Int(index!) + 1
+                print(index)
                 destination.selectedGame = [GameInformation[index!]]
                 
             }
