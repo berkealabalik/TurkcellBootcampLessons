@@ -24,7 +24,7 @@ struct Slide {
     
 }
 var AllGames : [GamesInfo] = []
-
+var FavoriteGames : [GamesData] = []
 class OnboardingViewController: UIViewController {
     
     // For prevent Load In Main

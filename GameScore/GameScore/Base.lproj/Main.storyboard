@@ -25,6 +25,143 @@
             </objects>
             <point key="canvasLocation" x="670" y="464"/>
         </scene>
+        <!--Game Detail View Controller-->
+        <scene sceneID="oh9-wK-d3U">
+            <objects>
+                <viewController storyboardIdentifier="GameDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vEB-9E-40z" customClass="GameDetailViewController" customModule="GameScore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xiw-6H-DqG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B5u-96-Zxs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="279"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="279" id="heS-R8-J1O"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JOs-CP-ERA">
+                                    <size key="itemSize" width="415" height="211"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="" id="98A-WH-tQ6" customClass="GameSliderCollectionViewCell" customModule="GameScore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.5" width="415" height="278"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8pP-7S-dnH">
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="278"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="415" height="278"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vEB-9E-40z" id="oXg-Kk-arK"/>
+                                    <outlet property="delegate" destination="vEB-9E-40z" id="caT-ym-Y54"/>
+                                </connections>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wak-jq-bbU">
+                                <rect key="frame" x="0.0" y="299" width="414" height="563"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nr7-42-EiG">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   GAME NAME" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTk-Qf-aO1">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YG2-yJ-fyM">
+                                        <rect key="frame" x="0.0" y="84.5" width="414" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Relase Date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-bg-3hl">
+                                        <rect key="frame" x="0.0" y="105" width="414" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlX-jJ-fMW">
+                                        <rect key="frame" x="0.0" y="132.5" width="414" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Metacritic Rate :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpO-Pa-8zJ">
+                                        <rect key="frame" x="0.0" y="144.5" width="414" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxj-Pe-hE4">
+                                        <rect key="frame" x="0.0" y="172" width="414" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI7-40-C1n">
+                                        <rect key="frame" x="0.0" y="197.5" width="414" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-6c-A5y">
+                                        <rect key="frame" x="0.0" y="225" width="414" height="338"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LkZ-sv-MQW">
+                                <rect key="frame" x="0.0" y="278" width="414" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemIndigoColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemGrayColor"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q73-We-BCo">
+                                <rect key="frame" x="320" y="195" width="74" height="68"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="thumsWhite"/>
+                                <connections>
+                                    <action selector="likeButton:" destination="vEB-9E-40z" eventType="touchUpInside" id="tlH-Zd-fEh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rao-eU-zjF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B5u-96-Zxs" firstAttribute="top" secondItem="Xiw-6H-DqG" secondAttribute="top" id="2SF-Di-5xC"/>
+                            <constraint firstItem="Wak-jq-bbU" firstAttribute="top" secondItem="LkZ-sv-MQW" secondAttribute="bottom" constant="-5" id="36r-lM-ckX"/>
+                            <constraint firstItem="B5u-96-Zxs" firstAttribute="trailing" secondItem="rao-eU-zjF" secondAttribute="trailing" id="9R0-uT-saa"/>
+                            <constraint firstItem="LkZ-sv-MQW" firstAttribute="top" secondItem="Q73-We-BCo" secondAttribute="bottom" constant="15" id="CNI-fF-bVW"/>
+                            <constraint firstItem="Wak-jq-bbU" firstAttribute="top" secondItem="B5u-96-Zxs" secondAttribute="bottom" constant="20" id="DTc-Rp-GIz"/>
+                            <constraint firstItem="rao-eU-zjF" firstAttribute="trailing" secondItem="Wak-jq-bbU" secondAttribute="trailing" id="E01-8E-JD6"/>
+                            <constraint firstItem="B5u-96-Zxs" firstAttribute="leading" secondItem="rao-eU-zjF" secondAttribute="leading" id="QGC-dC-lah"/>
+                            <constraint firstItem="Wak-jq-bbU" firstAttribute="leading" secondItem="rao-eU-zjF" secondAttribute="leading" id="a8G-kc-VLG"/>
+                            <constraint firstItem="rao-eU-zjF" firstAttribute="bottom" secondItem="Wak-jq-bbU" secondAttribute="bottom" id="iJn-ws-ZKH"/>
+                            <constraint firstItem="rao-eU-zjF" firstAttribute="trailing" secondItem="Q73-We-BCo" secondAttribute="trailing" constant="20" id="oOf-9c-vzd"/>
+                            <constraint firstItem="rao-eU-zjF" firstAttribute="trailing" secondItem="LkZ-sv-MQW" secondAttribute="trailing" id="uPd-gh-ter"/>
+                            <constraint firstItem="LkZ-sv-MQW" firstAttribute="leading" secondItem="rao-eU-zjF" secondAttribute="leading" id="vJc-dD-jUR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8wj-rx-Yeo"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="jI7-40-C1n" id="LmU-nZ-d3G"/>
+                        <outlet property="gameNameLAbel" destination="zTk-Qf-aO1" id="p8j-bk-w9q"/>
+                        <outlet property="metacriticLabel" destination="JpO-Pa-8zJ" id="ZXl-Ar-i2o"/>
+                        <outlet property="relaseDateLabel" destination="zd2-bg-3hl" id="2hc-vO-Brx"/>
+                        <outlet property="sliderCollectionView" destination="B5u-96-Zxs" id="yv2-id-vV8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pui-sa-xGV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776.8115942028987" y="136.60714285714286"/>
+        </scene>
         <!--Home-->
         <scene sceneID="exD-DJ-vxZ">
             <objects>
@@ -36,6 +173,9 @@
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="0gp-gc-CpG"/>
+                    <connections>
+                        <segue destination="vEB-9E-40z" kind="presentation" identifier="showGameDetail" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Zkk-Wa-gwg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYx-me-LD8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,11 +375,15 @@
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="thumsWhite" width="50" height="54"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

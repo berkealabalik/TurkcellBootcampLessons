@@ -8,15 +8,20 @@
 import UIKit
 
 var GameInformation : [GamesData] = []
+var GameDescription : String = ""
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
    
-   
+    
     var collectionView: UICollectionView?
+    var collectionViewHeader : UICollectionView?
     var searchBar : UISearchBar?
     override func viewDidLoad() {
         
         super.viewDidLoad()
+
         GameInformation = AllGames[0].results
+        GameDescription = AllGames[0].gamesInfoDescription
+        print("Gamedes \(GameDescription)")
         configureCollectionView()
 
         
@@ -29,9 +34,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
+        
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.width/3)
+        collectionViewHeader = UICollectionView(frame : .zero, collectionViewLayout: layout)
         collectionView = UICollectionView(frame : .zero, collectionViewLayout: layout)
         collectionView?.register(UINib(nibName: "GamesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GamesCollectionViewCell")
         collectionView?.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
@@ -74,10 +81,26 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return header
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showGameDetail", sender : nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let destination = segue.destination as? GameDetailViewController {
+                var index = self.collectionView?.indexPathsForSelectedItems?.first?.endIndex
+                index = Int(index!) + 3
+                destination.selectedGame = [GameInformation[index!]]
+                
+            }
+        }
+    
+    
+    
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 400)
+        return CGSize(width: view.frame.size.width, height: 370)
     }
     
 

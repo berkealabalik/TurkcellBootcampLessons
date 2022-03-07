@@ -9,7 +9,7 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView , UICollectionViewDelegateFlowLayout {
     
-    let layout = UICollectionViewFlowLayout()
+ 
     
 
     @IBOutlet weak var gameNameHeader: UILabel!
@@ -19,8 +19,6 @@ class HeaderCollectionReusableView: UICollectionReusableView , UICollectionViewD
     @IBOutlet weak var pageControl: UIPageControl!
     override func awakeFromNib() {
         super.awakeFromNib()
-        layout.scrollDirection = .vertical
-        
         
         outerView.backgroundColor = .purple
         
@@ -30,3 +28,4 @@ class HeaderCollectionReusableView: UICollectionReusableView , UICollectionViewD
     }
     
 }
+
