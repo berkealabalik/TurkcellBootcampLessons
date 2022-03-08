@@ -8,7 +8,7 @@
 import UIKit
 
 var GameInformation : [GamesData] = []
-var GameDescription : String = ""
+
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
    
     
@@ -18,16 +18,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+    
+        
         GameInformation = AllGames[0].results
-        GameDescription = AllGames[0].gamesInfoDescription
         configureCollectionView()
 
 }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        tabBarController?.tabBar.isHidden = false
         collectionView?.frame = view.bounds
+        navigationItem.titleView?.isHidden = true
     }
     
     private func configureCollectionView() {
@@ -53,7 +54,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,12 +65,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         UIImage.loadFrom(url: URL(string : GameInformation[indexPath.row + 3].backgroundImage)!) { image in
             cell.gameImage.image = image
         }
-        
-        
         return cell
     }
     
-  
+ 
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
@@ -83,24 +82,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showGameDetail", sender : nil)
+        performSegue(withIdentifier: "showGameDetail", sender : indexPath)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let destination = segue.destination as? GameDetailViewController {
-                var index = self.collectionView?.indexPathsForSelectedItems?.first?.endIndex
-                index = Int(index!) + 1
-                print(index)
-                destination.selectedGame = [GameInformation[index!]]
+                
+                let indexPath = sender as! IndexPath
+                destination.selectedGame = [GameInformation[indexPath.row + 3]]
                 
             }
         }
-    
-    
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.size.width, height: 370)
     }

@@ -22,6 +22,8 @@
 		CB39631C27D3924D00F1963F /* GameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39631B27D3924D00F1963F /* GameRequest.swift */; };
 		CB39631F27D39C0300F1963F /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39631E27D39C0300F1963F /* Games.swift */; };
 		CB39632127D39F7A00F1963F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39632027D39F7A00F1963F /* MainViewController.swift */; };
+		CB46EB4927D78F73004A7F23 /* GamesDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB46EB4827D78F73004A7F23 /* GamesDetailInfo.swift */; };
+		CB6D77EC27D7D16800279BE9 /* FavoriteGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D77EB27D7D16800279BE9 /* FavoriteGamesViewController.swift */; };
 		CB6EEEFA27D685E300A91B93 /* GameSliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6EEEF827D685E300A91B93 /* GameSliderCollectionViewCell.swift */; };
 		CB6EEEFB27D685E300A91B93 /* GameSliderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EEEF927D685E300A91B93 /* GameSliderCollectionViewCell.xib */; };
 		CB6EEEFD27D6A21A00A91B93 /* GameDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6EEEFC27D6A21A00A91B93 /* GameDetailRequest.swift */; };
@@ -46,6 +48,8 @@
 		CB39631B27D3924D00F1963F /* GameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRequest.swift; sourceTree = "<group>"; };
 		CB39631E27D39C0300F1963F /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		CB39632027D39F7A00F1963F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CB46EB4827D78F73004A7F23 /* GamesDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesDetailInfo.swift; sourceTree = "<group>"; };
+		CB6D77EB27D7D16800279BE9 /* FavoriteGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGamesViewController.swift; sourceTree = "<group>"; };
 		CB6EEEF827D685E300A91B93 /* GameSliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB6EEEF927D685E300A91B93 /* GameSliderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameSliderCollectionViewCell.xib; sourceTree = "<group>"; };
 		CB6EEEFC27D6A21A00A91B93 /* GameDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailRequest.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				CB39631E27D39C0300F1963F /* Games.swift */,
+				CB46EB4827D78F73004A7F23 /* GamesDetailInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 				CB39632027D39F7A00F1963F /* MainViewController.swift */,
 				CB13566C27D4B281002D45A1 /* OnboardingViewController.swift */,
 				CBFFA3B827D618BF00CE4FF0 /* GameDetailViewController.swift */,
+				CB6D77EB27D7D16800279BE9 /* FavoriteGamesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,10 +246,12 @@
 				CB39630427D390A400F1963F /* AppDelegate.swift in Sources */,
 				CB13567527D4BDCC002D45A1 /* GamesCollectionViewCell.swift in Sources */,
 				CB39630627D390A400F1963F /* SceneDelegate.swift in Sources */,
+				CB46EB4927D78F73004A7F23 /* GamesDetailInfo.swift in Sources */,
 				CBFFA3B927D618BF00CE4FF0 /* GameDetailViewController.swift in Sources */,
 				CB39631F27D39C0300F1963F /* Games.swift in Sources */,
 				CB39632127D39F7A00F1963F /* MainViewController.swift in Sources */,
 				CB1DC06927D538440014B42E /* HeaderCollectionReusableView.swift in Sources */,
+				CB6D77EC27D7D16800279BE9 /* FavoriteGamesViewController.swift in Sources */,
 				CB1DC06627D5336D0014B42E /* İmageDownload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

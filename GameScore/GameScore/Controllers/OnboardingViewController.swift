@@ -46,8 +46,6 @@ class OnboardingViewController: UIViewController {
                 print("Buraya error girdi")
                 print(error.localizedDescription)
                             }
-          
-          
                     }
     
         
@@ -158,15 +156,7 @@ class OnboardingCollectionViewCell : UICollectionViewCell {
         actionButton.setTitleColor(slide.buttonTitleColor, for: .normal)
         actionButton.setTitle(slide.buttonTitle, for: .normal)
         
-        /*
-        let animation = Animation.named(slide.animationName)
-        animationView.animation = animation
-        animationView.loopMode = .loop
-        
-        if !animationView.isAnimationPlaying { // IF animation Not Play . Then will Play
-            animationView.play()
-        }
-         */
+       
     }
     
     @IBAction func actionButtonTapped(_ sender: Any) {

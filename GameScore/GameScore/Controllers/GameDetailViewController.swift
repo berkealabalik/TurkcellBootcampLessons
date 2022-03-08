@@ -6,10 +6,11 @@
 //
 
 import UIKit
-
+public var slugName = ""
 class GameDetailViewController: UIViewController {
     var selectedGame : [GamesData] = []
     var selectedImages : [ShortScreenshot] = []
+    var  gameDetailInformation : [GamesDetailStruct] = []
     
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -18,19 +19,50 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var gameNameLAbel: UILabel!
     @IBOutlet weak var relaseDateLabel: UILabel!
     
+    @IBOutlet weak var handActionButton: UIButton!
+    @IBOutlet weak var imageNumControl: UIPageControl!
     
-    
+    let gameDetailRequest = GameDetailRequest()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
+        slugName = selectedGame[0].slug
+        //GET DETAİL DATA
+        gameDetailRequest.getGameDetail { res in
+            switch res{
+            case .success(let detail):
+                //self.gameDetailInformation = detail
+                print(detail)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        checkLikedBefore()
         configureData()
         sliderCollectionView.register(UINib(nibName: "GameSliderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "gameImagesCollectionCell")
-        print("id : \(selectedGame[0].slug)") // adresin sonuna 
+    }
+    
+    private func checkLikedBefore() {
+        if FavoriteGames.contains(where : {$0.id == selectedGame[0].id }) == true {
+            handActionButton.setBackgroundImage(UIImage(named: "thumsRed"), for: UIControl.State.normal)
+        } else {
+            handActionButton.setBackgroundImage(UIImage(named: "thumsWhite"), for: UIControl.State.normal)
+        }
     }
     
     @IBAction func likeButton(_ sender: Any) {
-        
-        
+        print("basıldı")
+        if FavoriteGames.contains(where : {$0.id == selectedGame[0].id }) == true {
+            handActionButton.setBackgroundImage(UIImage(named: "thumsWhite"), for: UIControl.State.normal)
+            if let idx = FavoriteGames.firstIndex(where: { $0.id == selectedGame[0].id }) {
+                FavoriteGames.remove(at: idx) }
+        } else {
+            handActionButton.setBackgroundImage(UIImage(named: "thumsRed"), for: UIControl.State.normal)
+            FavoriteGames.append(selectedGame[0])
+        }
+
     }
+    
     private func configureData() {
         if selectedGame.isEmpty == false {
             selectedImages = selectedGame[0].shortScreenshots
@@ -39,24 +71,21 @@ class GameDetailViewController: UIViewController {
             configureData()
         }
         
-        gameNameLAbel.text = " " + selectedGame[0].name
+        gameNameLAbel.text = "  " + selectedGame[0].name
         metacriticLabel.text = metacriticLabel.text! + " " + String(selectedGame[0].metacritic)
         relaseDateLabel.text = relaseDateLabel.text! + " " + selectedGame[0].released
-        descriptionLabel.text = "   " + selectedGame[0].updated
-        
-        
+        //descriptionLabel.text = "   " + gameDetailInformation[0].gamesDetailStructDescription
         
     }
     
 
-    
-
+    //End Main
 }
 
 extension GameDetailViewController : UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
-        return 5
+        return selectedImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,7 +95,8 @@ extension GameDetailViewController : UICollectionViewDelegate , UICollectionView
             UIImage.loadFrom(url: URL(string : selectedImages[indexPath.row].image)!) { image in
                 cell.gameImages.image = image
             }
-        //cell.imageNumberControl.currentPage = indexPath.row + 1
+        imageNumControl.numberOfPages = selectedImages.count
+        imageNumControl.currentPage = indexPath.row - 1
         return cell
     }
     
