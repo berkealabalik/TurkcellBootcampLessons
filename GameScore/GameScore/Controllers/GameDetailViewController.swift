@@ -6,11 +6,11 @@
 //
 
 import UIKit
-public var slugName = ""
+
 class GameDetailViewController: UIViewController {
     var selectedGame : [GamesData] = []
     var selectedImages : [ShortScreenshot] = []
-    var  gameDetailInformation : [GamesDetailStruct] = []
+    var  gameDetailInformation : String = ""
     
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -18,27 +18,29 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var gameNameLAbel: UILabel!
     @IBOutlet weak var relaseDateLabel: UILabel!
-    
     @IBOutlet weak var handActionButton: UIButton!
     @IBOutlet weak var imageNumControl: UIPageControl!
     
-    let gameDetailRequest = GameDetailRequest()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedImages = self.selectedGame[0].shortScreenshots
+        let gameDetailRequest = GameDetailRequest(slugname: selectedGame[0].slug)
         tabBarController?.tabBar.isHidden = true
-        slugName = selectedGame[0].slug
         //GET DETAİL DATA
         gameDetailRequest.getGameDetail { res in
             switch res{
             case .success(let detail):
-                //self.gameDetailInformation = detail
-                print(detail)
+                DispatchQueue.main.async {
+                    self.gameDetailInformation = detail.descriptionRaw ?? "nil"
+                    
+                    self.configureData()
+                }
             case .failure(let error):
                 print(error)
             }
         }
+        
         checkLikedBefore()
-        configureData()
         sliderCollectionView.register(UINib(nibName: "GameSliderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "gameImagesCollectionCell")
     }
     
@@ -64,17 +66,13 @@ class GameDetailViewController: UIViewController {
     }
     
     private func configureData() {
-        if selectedGame.isEmpty == false {
-            selectedImages = selectedGame[0].shortScreenshots
-        } else {
-            sleep(1)
-            configureData()
-        }
         
         gameNameLAbel.text = "  " + selectedGame[0].name
         metacriticLabel.text = metacriticLabel.text! + " " + String(selectedGame[0].metacritic)
-        relaseDateLabel.text = relaseDateLabel.text! + " " + selectedGame[0].released
-        //descriptionLabel.text = "   " + gameDetailInformation[0].gamesDetailStructDescription
+        relaseDateLabel.text = relaseDateLabel.text! + " " + (selectedGame[0].released)
+        print("Game Detail GEldi : \( gameDetailInformation)")
+        descriptionLabel.text = "   " + gameDetailInformation
+        
         
     }
     
@@ -84,7 +82,7 @@ class GameDetailViewController: UIViewController {
 
 extension GameDetailViewController : UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
+       
         return selectedImages.count
     }
     
