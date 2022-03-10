@@ -11,7 +11,8 @@ var GameInformation : [GamesData] = []
 
 class MainViewController: UIViewController {
     
-    var collectionView: UICollectionView!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeader: UICollectionView!
     var searchBar : UISearchBar?
     override func viewDidLoad() {
@@ -30,17 +31,12 @@ class MainViewController: UIViewController {
     
     private func configureCollectionView() {
        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.width/3)
-        layout.minimumLineSpacing = 0
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(UINib(nibName: "GamesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GamesCollectionViewCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.backgroundColor = .clear
-        view.addSubview(collectionView!)
+        
+       
       
       
     }

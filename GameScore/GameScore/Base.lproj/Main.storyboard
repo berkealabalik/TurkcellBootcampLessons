@@ -75,17 +75,51 @@
                                     <outlet property="delegate" destination="6cU-wQ-7yy" id="bvF-B9-1iK"/>
                                 </connections>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="R47-lq-m01">
+                                <rect key="frame" x="10" y="308" width="394" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemPurpleColor"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Uk-CZ-g2l">
+                                <rect key="frame" x="0.0" y="334" width="414" height="479"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kau-WJ-MF8">
+                                    <size key="itemSize" width="414" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7Oz-rh-jTH" customClass="GamesCollectionViewCell" customModule="GameScore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="F0Z-TY-Knt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="128"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OUs-FN-NpV"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="R47-lq-m01" firstAttribute="top" secondItem="evi-5K-Pbt" secondAttribute="bottom" constant="20" id="2mN-Wr-zhy"/>
+                            <constraint firstItem="OUs-FN-NpV" firstAttribute="trailing" secondItem="R47-lq-m01" secondAttribute="trailing" constant="10" id="D2c-LF-N2c"/>
                             <constraint firstItem="evi-5K-Pbt" firstAttribute="leading" secondItem="OUs-FN-NpV" secondAttribute="leading" id="Mac-S6-qUW"/>
                             <constraint firstItem="evi-5K-Pbt" firstAttribute="top" secondItem="OUs-FN-NpV" secondAttribute="top" id="Ops-ER-kKg"/>
+                            <constraint firstItem="7Uk-CZ-g2l" firstAttribute="top" secondItem="R47-lq-m01" secondAttribute="bottom" id="YDh-gH-uCI"/>
+                            <constraint firstItem="7Uk-CZ-g2l" firstAttribute="leading" secondItem="OUs-FN-NpV" secondAttribute="leading" id="aKq-IY-STM"/>
                             <constraint firstItem="evi-5K-Pbt" firstAttribute="trailing" secondItem="OUs-FN-NpV" secondAttribute="trailing" id="bsR-xG-EPY"/>
+                            <constraint firstItem="OUs-FN-NpV" firstAttribute="trailing" secondItem="7Uk-CZ-g2l" secondAttribute="trailing" id="eIE-ai-lux"/>
+                            <constraint firstItem="R47-lq-m01" firstAttribute="leading" secondItem="OUs-FN-NpV" secondAttribute="leading" constant="10" id="jWt-BA-kVR"/>
+                            <constraint firstItem="OUs-FN-NpV" firstAttribute="bottom" secondItem="7Uk-CZ-g2l" secondAttribute="bottom" id="sfS-q3-OWw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="doA-nA-cGP"/>
                     <connections>
+                        <outlet property="collectionView" destination="7Uk-CZ-g2l" id="x4Y-10-5gu"/>
                         <outlet property="collectionViewHeader" destination="evi-5K-Pbt" id="vdP-81-4rp"/>
                         <segue destination="vEB-9E-40z" kind="show" identifier="showGameDetail" id="aTd-gd-i91"/>
                     </connections>
