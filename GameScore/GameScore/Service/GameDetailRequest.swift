@@ -23,11 +23,6 @@ struct GameDetailRequest {
            self.resourceURL = request
         
        }
-    
-   
-    
-    
-       
     func getGameDetail(completion: @escaping(Result<GamesDetailStruct, GamesError>) -> Void) {
            let dataTask = URLSession.shared.dataTask(with: resourceURL as URLRequest) { data, response, error in
                guard let jsonData = data else {
@@ -38,7 +33,7 @@ struct GameDetailRequest {
                do {
                    
                    /*
-                   //SERİALİZATİON
+                   //SERİALİZATİON : Structure Burdan Çıkardın Template Al. Dict Print Al -> codeBeautiy -> QuickTypeio
                    let gamesData = try JSONSerialization.jsonObject(with: jsonData, options: [])
                    let jsonDataR = try JSONSerialization.data(withJSONObject: gamesData, options: [])
                    print("JSON data: \(jsonDataR)")

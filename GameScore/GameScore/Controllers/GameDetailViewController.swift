@@ -26,13 +26,14 @@ class GameDetailViewController: UIViewController {
         self.selectedImages = self.selectedGame[0].shortScreenshots
         let gameDetailRequest = GameDetailRequest(slugname: selectedGame[0].slug)
         tabBarController?.tabBar.isHidden = true
+        
+        
         //GET DETAİL DATA
         gameDetailRequest.getGameDetail { res in
             switch res{
             case .success(let detail):
                 DispatchQueue.main.async {
                     self.gameDetailInformation = detail.descriptionRaw ?? "nil"
-                    
                     self.configureData()
                 }
             case .failure(let error):
@@ -53,7 +54,6 @@ class GameDetailViewController: UIViewController {
     }
     
     @IBAction func likeButton(_ sender: Any) {
-        print("basıldı")
         if FavoriteGames.contains(where : {$0.id == selectedGame[0].id }) == true {
             handActionButton.setBackgroundImage(UIImage(named: "thumsWhite"), for: UIControl.State.normal)
             if let idx = FavoriteGames.firstIndex(where: { $0.id == selectedGame[0].id }) {
@@ -70,9 +70,7 @@ class GameDetailViewController: UIViewController {
         gameNameLAbel.text = "  " + selectedGame[0].name
         metacriticLabel.text = metacriticLabel.text! + " " + String(selectedGame[0].metacritic)
         relaseDateLabel.text = relaseDateLabel.text! + " " + (selectedGame[0].released)
-        print("Game Detail GEldi : \( gameDetailInformation)")
         descriptionLabel.text = "   " + gameDetailInformation
-        
         
     }
     
@@ -91,6 +89,7 @@ extension GameDetailViewController : UICollectionViewDelegate , UICollectionView
         cell.backgroundColor = .clear
         
             UIImage.loadFrom(url: URL(string : selectedImages[indexPath.row].image)!) { image in
+                image?.jpegData(compressionQuality: 50)
                 cell.gameImages.image = image
             }
         imageNumControl.numberOfPages = selectedImages.count
