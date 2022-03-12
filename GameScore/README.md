@@ -1,5 +1,4 @@
 
-![favorite](https://user-images.githubusercontent.com/97310060/158028445-76c57b44-d8fc-47c8-8cb5-c83157e4e268.gif)
 
 
 <br />
