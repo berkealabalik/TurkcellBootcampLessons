@@ -8,11 +8,22 @@
 import UIKit
 
 class FavoriteGamesViewController: UIViewController , UICollectionViewDelegateFlowLayout {
-    var favoriteGamesCollectionView: UICollectionView!
     
+    private var favoriteGamesCollectionView: UICollectionView!
+    @IBOutlet weak var notfoundLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCollection()
+    
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        favoriteGamesCollectionView?.frame = view.bounds
+    }
+    
+    
+    private func configureCollection(){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -25,13 +36,8 @@ class FavoriteGamesViewController: UIViewController , UICollectionViewDelegateFl
         favoriteGamesCollectionView?.backgroundColor = .clear
         view.addSubview(favoriteGamesCollectionView!)
         
-        // Do any additional setup after loading the view.
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-       
-        favoriteGamesCollectionView?.frame = view.bounds
-    }
+    
     override func viewDidAppear(_ animated: Bool) {
         favoriteGamesCollectionView.reloadData()
         tabBarController?.tabBar.isHidden = false
@@ -42,6 +48,13 @@ class FavoriteGamesViewController: UIViewController , UICollectionViewDelegateFl
 
 extension FavoriteGamesViewController : UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        // LABEL HİDDEN OPERATIONS
+        if FavoriteGames.isEmpty == true {
+            self.notfoundLabel.isHidden = false
+        }else {
+            self.notfoundLabel.isHidden = true
+        }
         return FavoriteGames.count
     }
     
@@ -50,10 +63,13 @@ extension FavoriteGamesViewController : UICollectionViewDelegate , UICollectionV
         cell.nameGame.text = FavoriteGames[indexPath.row].name
         cell.backgroundColor = .darkGray
         cell.ratingReleasedLAbel.text = "Rating : " + String((FavoriteGames[indexPath.row].metacritic)) + "\nRelase Date : " + (FavoriteGames[indexPath.row].released)
-        
-        
         UIImage.loadFrom(url: URL(string : FavoriteGames[indexPath.row].backgroundImage)!) { image in
-            cell.gameImage.image = image }
+          
+            if let imageData = image?.jpegData(compressionQuality: 0.0)  {
+                cell.gameImage.image = UIImage(data: imageData)
+            }
+            
+            }
     
         return cell
     

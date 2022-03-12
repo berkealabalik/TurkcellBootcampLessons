@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CBA1D13827DC93EC0065B0C6 /* KCCustomViews in Frameworks */ = {isa = PBXBuildFile; productRef = CBA1D13727DC93EC0065B0C6 /* KCCustomViews */; };
 		CBDE3A1B27D343DD0003F783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE3A1A27D343DD0003F783 /* AppDelegate.swift */; };
 		CBDE3A1D27D343DD0003F783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE3A1C27D343DD0003F783 /* SceneDelegate.swift */; };
 		CBDE3A2227D343DD0003F783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBDE3A2027D343DD0003F783 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA1D13827DC93EC0065B0C6 /* KCCustomViews in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,9 @@
 			dependencies = (
 			);
 			name = ReservationApp;
+			packageProductDependencies = (
+				CBA1D13727DC93EC0065B0C6 /* KCCustomViews */,
+			);
 			productName = ReservationApp;
 			productReference = CBDE3A1727D343DD0003F783 /* ReservationApp.app */;
 			productType = "com.apple.product-type.application";
@@ -172,6 +177,9 @@
 				Base,
 			);
 			mainGroup = CBDE3A0E27D343DD0003F783;
+			packageReferences = (
+				CBA1D13627DC93EC0065B0C6 /* XCRemoteSwiftPackageReference "KCCustomViews" */,
+			);
 			productRefGroup = CBDE3A1827D343DD0003F783 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -428,6 +436,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CBA1D13627DC93EC0065B0C6 /* XCRemoteSwiftPackageReference "KCCustomViews" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kcaglarr/KCCustomViews";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBA1D13727DC93EC0065B0C6 /* KCCustomViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBA1D13627DC93EC0065B0C6 /* XCRemoteSwiftPackageReference "KCCustomViews" */;
+			productName = KCCustomViews;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBDE3A0F27D343DD0003F783 /* Project object */;
 }

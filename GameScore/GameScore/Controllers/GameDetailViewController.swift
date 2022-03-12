@@ -89,8 +89,9 @@ extension GameDetailViewController : UICollectionViewDelegate , UICollectionView
         cell.backgroundColor = .clear
         
             UIImage.loadFrom(url: URL(string : selectedImages[indexPath.row].image)!) { image in
-                image?.jpegData(compressionQuality: 50)
-                cell.gameImages.image = image
+                if let imageData = image?.jpegData(compressionQuality: 0)  {
+                    cell.gameImages.image = UIImage(data: imageData)
+                }
             }
         imageNumControl.numberOfPages = selectedImages.count
         imageNumControl.currentPage = indexPath.row - 1

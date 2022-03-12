@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "KCCustomViews",
+        "repositoryURL": "https://github.com/kcaglarr/KCCustomViews",
+        "state": {
+          "branch": null,
+          "revision": "97fb06353134b04e69dd5256bb7748e5527c14a9",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

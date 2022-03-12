@@ -7,11 +7,11 @@
 
 import UIKit
 
-var GameInformation : [GamesData] = []
+//ar GameInformation : [GamesData] = []
 
 class MainViewController: UIViewController {
-    
-    
+    private var GameInformation : [GamesData] = []
+    @IBOutlet weak var NotFoundLabel: UILabel!
     @IBOutlet weak var pageNumControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeader: UICollectionView!
@@ -20,8 +20,8 @@ class MainViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+       
         GameInformation = AllGames[0].results
         configureCollectionView()
         configureHeaderCollectionView()
@@ -29,9 +29,8 @@ class MainViewController: UIViewController {
 }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        NotFoundLabel.isHidden = true
         tabBarController?.tabBar.isHidden = false
-        navigationController?.isToolbarHidden = true
     }
     
     
@@ -40,15 +39,10 @@ class MainViewController: UIViewController {
     }
     
     private func configureCollectionView() {
-        
         collectionView.register(UINib(nibName: "GamesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GamesCollectionViewCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.backgroundColor = .clear
-        
-       
-      
-      
     }
     
     private func configureHeaderCollectionView() {
@@ -56,7 +50,7 @@ class MainViewController: UIViewController {
         collectionViewHeader.backgroundColor = .darkGray
     }
       
-}
+} // END MAİN
 
 
 
@@ -65,10 +59,9 @@ extension MainViewController : UICollectionViewDelegate,  UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionViewHeader {
-            return 3
-        }
-        return GameInformation.count
-        
+                return 3
+            }
+        return (GameInformation.count - 3)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,31 +70,28 @@ extension MainViewController : UICollectionViewDelegate,  UICollectionViewDataSo
             let headercell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameImagesCollectionCell", for: indexPath) as! GameSliderCollectionViewCell
             headercell.backgroundColor = .clear
             UIImage.loadFrom(url: URL(string : GameInformation[indexPath.row].backgroundImage)!) { image in
-                image?.jpegData(compressionQuality: 50)
-                headercell.gameImages.image = image
-                headercell.AllCorners = 10
-                    self.pageNumControl.currentPage = indexPath.row
+                if let imageData = image?.jpegData(compressionQuality: 0)  {
+                    headercell.gameImages.image = UIImage(data: imageData)
+                }
                 
             }
-       
+            self.pageNumControl.currentPage = indexPath.row
             return headercell
         }
         
         
-            var newIndexPath = indexPath
+        // Index Path Operations . Header Start From 0 , Sub Section start from 3 .
+        var newIndexPath = indexPath
         newIndexPath.row = indexPath.row + 3
-        if searchBarActive == true {
-            newIndexPath.row = 0
-        }
+       
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GamesCollectionViewCell", for: newIndexPath) as! GamesCollectionViewCell
             cell.nameGame.text = GameInformation[newIndexPath.row].name
             cell.ratingReleasedLAbel.text = "Rating : "+String(GameInformation[newIndexPath.row].metacritic)+"\nRelase Date : "+GameInformation[newIndexPath.row].released
             UIImage.loadFrom(url: URL(string : GameInformation[newIndexPath.row].backgroundImage)!) { image in
-                image?.jpegData(compressionQuality: 50)
-                cell.gameImage.image = image
+                if let imageData = image?.jpegData(compressionQuality: 0)  {
+                    cell.gameImage.image = UIImage(data: imageData)
+                }
             }
-          
-        
             return cell
     }
     
@@ -109,6 +99,7 @@ extension MainViewController : UICollectionViewDelegate,  UICollectionViewDataSo
     // NEXT Destionation Informations
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var newIndexPath = indexPath
+      
         if collectionView == collectionViewHeader {
             performSegue(withIdentifier: "showGameDetail", sender : newIndexPath)
         } else {
@@ -116,40 +107,60 @@ extension MainViewController : UICollectionViewDelegate,  UICollectionViewDataSo
             performSegue(withIdentifier: "showGameDetail", sender : newIndexPath )
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let destination = segue.destination as? GameDetailViewController {
                 let indexPath = sender as! IndexPath
-                print(indexPath.row)
                     destination.selectedGame = [GameInformation[indexPath.row]]
-             
-            }
+             }
     }
   
 }//--End MVC Extension
 
 
 extension MainViewController : UISearchBarDelegate {
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        print("çalıştı")
-        self.searchBarActive = true
-    }
-    
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        GameInformation.removeAll()
-        for item in AllGames[0].results {
-            if (item.name.lowercased().contains((searchBar.text!.lowercased()))) {
-                GameInformation.append(item)
-        }
-        if(searchBar.text!.isEmpty) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        if (searchText.count  > 3) {
+            searchbySearchbar(searchText: searchText)
+            self.collectionViewHeader.reloadData()
+            self.collectionView.reloadData()
+            }
+        
+        if searchText == "" {
+            self.NotFoundLabel.isHidden = true
             self.searchBarActive = false
             GameInformation = AllGames[0].results
-        }
-        self.collectionView?.reloadData()
+            self.collectionView?.reloadData()
+            self.collectionViewHeader.reloadData()
+            }
     }
-    
-}
+
+    func searchbySearchbar(searchText : String){
+        
+        // If text reach first 3 it will add item .
+        var count = 0
+        count = count + 1
+        
+        
+        if count == 1 {
+            self.searchBarActive = true
+            GameInformation.removeAll()
+            GameInformation.append(contentsOf: AllGames[0].results.prefix(upTo: 3))
+            for item in AllGames[0].results {
+                if (item.name.lowercased().contains((searchText.lowercased()))) {
+                    GameInformation.append(item)
+                }
+                if ( GameInformation.count <= 3) {
+                    self.NotFoundLabel.isHidden = false
+                }else {
+                    self.NotFoundLabel.isHidden = true
+                }
+       
+            }
+        }
+    }
+
 
 }
-
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KCCustomViews
 
 class ReservationListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -16,9 +17,14 @@ class ReservationListViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         
-        
+       
         
     }
+    
+    @IBAction func checkAction(_ sender: KCCheckbox) {
+       print(sender.checked)
+    }
+
     
 
     
