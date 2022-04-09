@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ybb-xI-sWc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ybb-xI-sWc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -409,12 +409,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="T6w-zL-idu">
-                                <rect key="frame" x="129.5" y="776" width="155.5" height="26"/>
+                                <rect key="frame" x="149.5" y="776" width="115.5" height="26"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemIndigoColor"/>
                                 <color key="currentPageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bKu-od-eZM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZiQ-P8-wdZ">
                                     <size key="itemSize" width="414" height="800"/>
@@ -431,9 +431,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j5y-pT-CfI">
-                                                    <rect key="frame" x="0.0" y="90" width="380" height="627"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="380" height="807"/>
                                                     <subviews>
-                                                        <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWt-hV-QkF" customClass="UIImageView">
+                                                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="YWt-hV-QkF" customClass="UIImageView">
                                                             <rect key="frame" x="0.0" y="0.0" width="380" height="380"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -441,10 +441,13 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaW-VV-tvL">
-                                                            <rect key="frame" x="0.0" y="380" width="380" height="191"/>
+                                                            <rect key="frame" x="0.0" y="380" width="380" height="371"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Onborading Template" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh7-Dh-Kgq">
-                                                                    <rect key="frame" x="36" y="50" width="308" height="91"/>
+                                                                    <rect key="frame" x="36" y="10" width="308" height="351"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="hNX-x6-uOS"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -452,14 +455,14 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="Kh7-Dh-Kgq" secondAttribute="bottom" constant="50" id="IkN-dH-Mxi"/>
-                                                                <constraint firstItem="Kh7-Dh-Kgq" firstAttribute="top" secondItem="aaW-VV-tvL" secondAttribute="top" constant="50" id="KOj-tQ-3f0"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Kh7-Dh-Kgq" secondAttribute="bottom" constant="10" id="IkN-dH-Mxi"/>
+                                                                <constraint firstItem="Kh7-Dh-Kgq" firstAttribute="top" secondItem="aaW-VV-tvL" secondAttribute="top" constant="10" id="KOj-tQ-3f0"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Kh7-Dh-Kgq" secondAttribute="trailing" constant="36" id="KZn-gW-tb0"/>
                                                                 <constraint firstItem="Kh7-Dh-Kgq" firstAttribute="leading" secondItem="aaW-VV-tvL" secondAttribute="leading" constant="36" id="yK1-TQ-daR"/>
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfI-Ci-NsM">
-                                                            <rect key="frame" x="0.0" y="571" width="380" height="56"/>
+                                                            <rect key="frame" x="0.0" y="751" width="380" height="56"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnr-Us-2Mu">
                                                                     <rect key="frame" x="0.0" y="0.0" width="352" height="56"/>
@@ -515,6 +518,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="j5y-pT-CfI" secondAttribute="trailing" id="Axq-1l-OrH"/>
+                                                <constraint firstItem="j5y-pT-CfI" firstAttribute="top" secondItem="kbH-Wp-URq" secondAttribute="top" id="FzY-Qx-fcf"/>
+                                                <constraint firstAttribute="bottom" secondItem="j5y-pT-CfI" secondAttribute="bottom" id="K3d-cH-iE5"/>
                                                 <constraint firstItem="j5y-pT-CfI" firstAttribute="centerY" secondItem="kbH-Wp-URq" secondAttribute="centerY" id="gyU-2F-wBg"/>
                                                 <constraint firstItem="j5y-pT-CfI" firstAttribute="leading" secondItem="kbH-Wp-URq" secondAttribute="leading" id="n7l-LI-w0x"/>
                                             </constraints>
@@ -543,13 +548,12 @@
                         <viewLayoutGuide key="safeArea" id="Fi9-Ym-Chw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bKu-od-eZM" firstAttribute="trailing" secondItem="jba-M8-kqm" secondAttribute="trailing" id="Q00-4o-L4p"/>
-                            <constraint firstItem="bKu-od-eZM" firstAttribute="top" secondItem="jba-M8-kqm" secondAttribute="top" id="eq0-Ed-9xw"/>
-                            <constraint firstItem="bKu-od-eZM" firstAttribute="leading" secondItem="jba-M8-kqm" secondAttribute="leading" id="l9z-2j-fUB"/>
+                            <constraint firstItem="bKu-od-eZM" firstAttribute="trailing" secondItem="Fi9-Ym-Chw" secondAttribute="trailing" id="Q00-4o-L4p"/>
+                            <constraint firstItem="bKu-od-eZM" firstAttribute="top" secondItem="Fi9-Ym-Chw" secondAttribute="top" id="eq0-Ed-9xw"/>
+                            <constraint firstItem="bKu-od-eZM" firstAttribute="leading" secondItem="Fi9-Ym-Chw" secondAttribute="leading" id="l9z-2j-fUB"/>
                             <constraint firstAttribute="bottom" secondItem="bKu-od-eZM" secondAttribute="bottom" id="rK1-RT-ytx"/>
                             <constraint firstItem="Fi9-Ym-Chw" firstAttribute="bottom" secondItem="T6w-zL-idu" secondAttribute="bottom" constant="60" id="rig-rG-Caf"/>
                             <constraint firstItem="T6w-zL-idu" firstAttribute="centerX" secondItem="jba-M8-kqm" secondAttribute="centerX" id="yoF-RW-LzN"/>
-                            <constraint firstAttribute="trailing" secondItem="bKu-od-eZM" secondAttribute="trailing" id="zF8-QX-der"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>

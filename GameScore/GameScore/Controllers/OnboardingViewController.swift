@@ -20,7 +20,7 @@ struct Slide {
     static let collection: [Slide] = [
         .init(title: "Welcome To \nGameScore",titleColor: .white, animationName: "TenisGame", buttonColor: UIColor(red: 237/255, green: 18/255, blue: 123/255, alpha: 0.93), buttonTitle: "     Let's Start", backgroundColor: UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1) , buttonTitleColor: .white),
         .init(title: "New Games \nNew Worlds ",titleColor: .white, animationName: "hockeyGame", buttonColor: UIColor(red: 0/255, green: 173/255, blue: 239/255, alpha: 0.93)  , buttonTitle: "     Find New Games", backgroundColor: UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1)  , buttonTitleColor: .white)
-
+        
     ]
     
 }
@@ -30,12 +30,12 @@ var FavoriteGames : [GamesData] = []
 class OnboardingViewController: UIViewController {
     
     // For prevent Load In Main
-  
+    
     let gameRequest = GameRequest()
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     private let slides: [Slide] = Slide.collection
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,9 +50,9 @@ class OnboardingViewController: UIViewController {
             case .failure(let error):
                 print("Buraya error girdi")
                 print(error.localizedDescription)
-                            }
-                    }
-    
+            }
+        }
+        
         
         setupCollectionView()
         setupPageControl()
@@ -90,8 +90,8 @@ class OnboardingViewController: UIViewController {
     private func showMain() {
         let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UITabbarCont") // Controller Routed
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-            let sceneDelegate = windowScene.delegate as? SceneDelegate,
-            let window = sceneDelegate.window {
+           let sceneDelegate = windowScene.delegate as? SceneDelegate,
+           let window = sceneDelegate.window {
             
             window.rootViewController = mainVC // Change if
             UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve, animations: nil, completion: nil)
@@ -103,9 +103,9 @@ class OnboardingViewController: UIViewController {
         pageController.currentPage = index
     }
     
-
-  
-
+    
+    
+    
 }
 
 extension OnboardingViewController : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
@@ -119,9 +119,6 @@ extension OnboardingViewController : UICollectionViewDelegate , UICollectionView
         cell.configure(with: slide)
         cell.actionButtonDidTap = { [weak self] in
             self?.handleActionButton(at: indexPath)
-            print(indexPath) // Shows Which Slide We are
-            
-            
         }
         return cell
     }
@@ -136,9 +133,6 @@ extension OnboardingViewController : UICollectionViewDelegate , UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
-    
-    
 }
 
 
@@ -149,7 +143,7 @@ class OnboardingCollectionViewCell : UICollectionViewCell {
     @IBOutlet weak var emptyRightArea: UIView!
     @IBOutlet weak var titleViewArea: UIView!
     var actionButtonDidTap: (() -> Void)?
-        
+    
     
     
     
@@ -165,7 +159,7 @@ class OnboardingCollectionViewCell : UICollectionViewCell {
         actionButton.setTitle(slide.buttonTitle, for: .normal)
         animationView.image = UIImage(named: slide.animationName)
         
-       
+        
     }
     
     @IBAction func actionButtonTapped(_ sender: Any) {

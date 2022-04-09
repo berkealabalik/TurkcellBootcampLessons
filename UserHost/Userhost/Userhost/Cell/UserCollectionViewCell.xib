@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" id="gTV-IL-0wX" customClass="UserCollectionViewCell" customModule="Userhost" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="439" height="250"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfE-Fw-YYn">
+                        <rect key="frame" x="0.0" y="0.0" width="439" height="250"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wKM-Df-Buq">
+                                <rect key="frame" x="20" y="20" width="399" height="210"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6vT-rL-Zeh">
+                                        <rect key="frame" x="0.0" y="0.0" width="399" height="210"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yTG-Ag-yQb">
+                                                <rect key="frame" x="0.0" y="1.5" width="92.5" height="207.5"/>
+                                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isım" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYA-wh-1iL">
+                                                <rect key="frame" x="102.5" y="0.0" width="92" height="210"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isım" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-Yd-hxo">
+                                                <rect key="frame" x="204.5" y="0.0" width="92.5" height="210"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uK-Pn-1ur">
+                                                <rect key="frame" x="307" y="0.0" width="92" height="210"/>
+                                                <color key="tintColor" red="0.92941176469999998" green="0.070588235289999995" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="" buttonSize="large">
+                                                    <imageReference key="image" image="info.circle.fill" catalog="system" symbolScale="large"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wKM-Df-Buq" secondAttribute="trailing" constant="20" id="GBB-9b-ipR"/>
+                            <constraint firstAttribute="bottom" secondItem="wKM-Df-Buq" secondAttribute="bottom" constant="20" id="KoZ-aX-ahD"/>
+                            <constraint firstItem="wKM-Df-Buq" firstAttribute="leading" secondItem="sfE-Fw-YYn" secondAttribute="leading" constant="20" id="LQ5-mR-73w"/>
+                            <constraint firstItem="wKM-Df-Buq" firstAttribute="top" secondItem="sfE-Fw-YYn" secondAttribute="top" constant="20" id="lcd-mj-ATz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="sfE-Fw-YYn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xhz-sv-D2r"/>
+                <constraint firstAttribute="bottom" secondItem="sfE-Fw-YYn" secondAttribute="bottom" id="ZdX-HZ-ASd"/>
+                <constraint firstAttribute="trailing" secondItem="sfE-Fw-YYn" secondAttribute="trailing" id="c4R-Yh-UfM"/>
+                <constraint firstItem="sfE-Fw-YYn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mvW-k8-Swd"/>
+            </constraints>
+            <size key="customSize" width="439" height="250"/>
+            <connections>
+                <outlet property="NameLabel" destination="FYA-wh-1iL" id="7XU-GF-Y9w"/>
+                <outlet property="OuterView" destination="sfE-Fw-YYn" id="15o-7q-jFQ"/>
+                <outlet property="StackViewTop" destination="6vT-rL-Zeh" id="l84-Do-XPH"/>
+                <outlet property="detailButton" destination="2uK-Pn-1ur" id="bfy-IF-HcW"/>
+                <outlet property="userNameLabel" destination="v5A-Yd-hxo" id="bnX-IV-oLh"/>
+            </connections>
+            <point key="canvasLocation" x="161.59420289855075" y="-174.10714285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

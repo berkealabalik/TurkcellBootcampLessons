@@ -12,7 +12,7 @@ protocol ReservationInsertCellDelegate : AnyObject {
 }
 class ReservationInsertCell: UITableViewCell {
     
-// Field - Labels
+    // Field - Labels
     @IBOutlet weak var reservationListExpandLabel: UILabel!
     @IBOutlet weak var reservationNumberTextField: UITextField!
     @IBOutlet weak var digit1: UITextField!
@@ -21,7 +21,7 @@ class ReservationInsertCell: UITableViewCell {
     @IBOutlet weak var digit4: UITextField!
     @IBOutlet weak var digit5: UITextField!
     @IBOutlet weak var digit6: UITextField!
-   
+    
     
     
     
@@ -40,7 +40,7 @@ class ReservationInsertCell: UITableViewCell {
     
     private func configure() {
         reservationListExpandLabel.isUserInteractionEnabled = true
-    let tab = UITapGestureRecognizer()
+        let tab = UITapGestureRecognizer()
         tab.addTarget(self, action: #selector(expand))
         reservationListExpandLabel.addGestureRecognizer(tab)
     }
@@ -124,10 +124,10 @@ class ReservationInsertCell: UITableViewCell {
     }
     
     
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
 }
 

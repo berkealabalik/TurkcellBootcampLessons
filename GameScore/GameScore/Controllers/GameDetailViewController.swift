@@ -62,7 +62,7 @@ class GameDetailViewController: UIViewController {
             handActionButton.setBackgroundImage(UIImage(named: "thumsRed"), for: UIControl.State.normal)
             FavoriteGames.append(selectedGame[0])
         }
-
+        
     }
     
     private func configureData() {
@@ -80,7 +80,7 @@ class GameDetailViewController: UIViewController {
 
 extension GameDetailViewController : UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
+        
         return selectedImages.count
     }
     
@@ -88,11 +88,11 @@ extension GameDetailViewController : UICollectionViewDelegate , UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameImagesCollectionCell", for: indexPath) as! GameSliderCollectionViewCell
         cell.backgroundColor = .clear
         
-            UIImage.loadFrom(url: URL(string : selectedImages[indexPath.row].image)!) { image in
-                if let imageData = image?.jpegData(compressionQuality: 0)  {
-                    cell.gameImages.image = UIImage(data: imageData)
-                }
+        UIImage.loadFrom(url: URL(string : selectedImages[indexPath.row].image)!) { image in
+            if let imageData = image?.jpegData(compressionQuality: 0)  {
+                cell.gameImages.image = UIImage(data: imageData)
             }
+        }
         imageNumControl.numberOfPages = selectedImages.count
         imageNumControl.currentPage = indexPath.row - 1
         return cell
