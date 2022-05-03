@@ -11,14 +11,15 @@
     Architectural Pattern : Viper
     <br />
     Popcorn Daily Project Have :  Network Service , Search Bar With Url Request , Movie Details and Movies , Auto Slider , Imdb Page Forward , UI Tests , Unit Tests , Collection Views And Table Views .
+    <br/>
     Package Dependencies : Alamofire , Lottie , Kingfisher
     <br />
     <br />
-    <a><strong> Splash Screen With Timer And Slider With Auto Slide </strong></a>
-    <br />
+    <a><strong> Splash Screen With Timer And Slider With Auto Slide && Internet Connection Error</strong></a>
   <br />
     <br />
      <img src="https://user-images.githubusercontent.com/97310060/166554605-38e141ff-c8a9-4231-83d3-cbcd6eb7db52.gif" alt="animated" />
+     <img src="https://user-images.githubusercontent.com/97310060/166556483-bcd51509-ba17-44a8-a77f-a08b74bdbbc8.gif" alt="animated" />
     <br />
     <br />
     <a><strong> Main Screen Scroll And Search Bar Use </strong></a>
